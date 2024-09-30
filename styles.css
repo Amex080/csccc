@@ -1,0 +1,79 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 60%;
+    margin: auto;
+    overflow: hidden;
+    background: #fff;
+    padding: 20px;
+    margin-top: 50px;
+    box-shadow: 0px 0px 10px 0px #000;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    color: #333;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    color: #333;
+}
+
+label span {
+    color: red;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="file"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    height: 100px;
+}
+
+button[type="submit"],
+button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background: #333;
+    color: #fff;
+    border: none;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button[type="submit"]:hover,
+button:hover {
+    background: #555;
+}
+
+img {
+    display: block;
+    margin: 20px auto;
+    max-width: 200px;
+    border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+}

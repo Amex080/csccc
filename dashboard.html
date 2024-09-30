@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="profile.css">
+    <title>Staff Profile Dashboard</title>
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="dashboard-header">
+            <div class="profile-picture" id="profilePicture"></div>
+            <div class="header-details">
+                <h1 id="staffName">John Doe</h1>
+                <h2 id="staffSpecialization">Marketing Consultant</h2>
+                <p id="staffPersonalStatement">Passionate marketing consultant with over 5 years of experience in driving growth and leading strategic marketing campaigns.</p>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="left-column">
+                <div class="section">
+                    <h3>Contact Information</h3>
+                    <p><strong>Email:</strong> <span id="staffEmail">john.doe@example.com</span></p>
+                    <p><strong>Phone:</strong> <span id="staffPhone">(123) 456-7890</span></p>
+                </div>
+
+                <div class="section">
+                    <h3>Social Media Handles</h3>
+                    <p><strong>Facebook:</strong> <span id="staffFacebook">john.doe.fb</span></p>
+                    <p><strong>Twitter:</strong> <span id="staffTwitter">@johnDoe</span></p>
+                    <p><strong>Instagram:</strong> <span id="staffInstagram">@johndoeinsta</span></p>
+                    <p><strong>YouTube:</strong> <span id="staffYouTube">John Doe Channel</span></p>
+                </div>
+
+                <div class="section">
+                    <h3>Skills</h3>
+                    <ul class="skills-list" id="skillsList">
+                        <li>Problem Solving - 90%</li>
+                        <li>Collaboration - 75%</li>
+                        <li>Adaptability - 85%</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h3>Hobbies</h3>
+                    <p id="staffHobbies">Traveling, Writing, Photography</p>
+                </div>
+            </div>
+
+            <div class="right-column">
+                <div class="section">
+                    <h3>Professional Experience</h3>
+                    <div class="experience">
+                        <h4>Marketing Consultant - XYZ Company</h4>
+                        <p>Jan 2020 - Present</p>
+                        <p>Developing and executing marketing strategies to boost brand awareness and drive sales growth.</p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3>Education</h3>
+                    <div class="education">
+                        <h4>Master of Business Administration (MBA)</h4>
+                        <p>University of Business Studies, 2016 - 2018</p>
+                    </div>
+                    <div class="education">
+                        <h4>Bachelor of Science in Marketing</h4>
+                        <p>University of Marketing and Sales, 2012 - 2016</p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3>Department & Position</h3>
+                    <p><strong>Department:</strong> <span id="staffDepartment">Marketing</span></p>
+                    <p><strong>Position Held:</strong> <span id="staffLeadershipPosition">Dean</span></p>
+                    <div id="welcomeAddressSection" style="display:none;">
+                        <p><strong>Welcome Address:</strong> <span id="staffWelcomeAddress">Welcome to the marketing department. We aim to foster a culture of innovation and collaboration.</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="dashboard-footer">
+            <p>Contact Information: <span id="footerContactPhone">(123) 456-7890</span>, <span id="footerContactEmail">john.doe@example.com</span></p>
+            <button onclick="window.print()">Print Dashboard</button>
+        </footer>
+    </div>
+    <script>
+         var name = localStorage.getItem('staffName');
+         var name = localStorage.getItem('staffEmail');
+
+
+
+
+         if (name && email) {
+      var formDataDiv = document.getElementById('formDataSection');
+      formDataDiv.innerHTML = 
+        <div class="user-details">
+          <h2>User Details</h2>
+          <p class="user-name"><strong>Name:</strong> ${name}</p>
+          <p class="user-email"><strong>Email:</strong> ${email}</p>
+        </div>
+      ;
+    }
+    </script>
+</body>
+</html>

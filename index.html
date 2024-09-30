@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>University Staff Profiling Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Include EmailJS SDK -->
+    <script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+    <script>
+        (function(){
+            emailjs.init("service_ih3c44a"); // Replace with your EmailJS user ID
+        })();
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Staff Profiling Form</h1>
+        <form id="staffForm">
+            <!-- 1) Name (your name here/required) -->
+            <label for="name">Name<span>*</span></label>
+            <input type="text" id="name" name="name" required>
+
+            <!-- 2) Personal Statement (your bio/about me) -->
+            <label for="personalStatement">Personal Statement</label>
+            <textarea id="personalStatement" name="personalStatement"></textarea>
+
+            <!-- 3) Area of Specialization (your specialty here/required) -->
+            <label for="specialization">Area of Specialization<span>*</span></label>
+            <input type="text" id="specialization" name="specialization" required>
+
+            <!-- 4) Leadership Position Held (selected from an auto picker) -->
+            <label for="leadershipPosition">Leadership Position Held</label>
+            <select id="leadershipPosition" name="leadershipPosition">
+                <option value="">--Select Position--</option>
+                <option value="VC">VC</option>
+                <option value="DVC">DVC</option>
+                <option value="Dean">Dean</option>
+                <option value="Sub-Dean">Sub-Dean</option>
+                <option value="Faculty Officer">Faculty Officer</option>
+                <option value="Director">Director</option>
+                <option value="HOD">HOD</option>
+                <option value="Librarian">Librarian</option>
+                <option value="Registrar">Registrar</option>
+                <option value="Student Heads/President">Student Heads/President</option>
+                <!-- Add more positions as needed -->
+            </select>
+
+            <!-- 5) Status (selected from an auto picker) -->
+            <label for="status">Status</label>
+            <select id="status" name="status">
+                <option value="">--Select Status--</option>
+                <option value="Academic - Fulltime/Main">Academic - Fulltime/Main</option>
+                <option value="Academic - Parttime/Adjunct">Academic - Parttime/Adjunct</option>
+                <option value="Non-academic - Administrative">Non-academic - Administrative</option>
+                <option value="Non-academic - Technical/Laboratory">Non-academic - Technical/Laboratory</option>
+                <option value="Non-academic - Adhoc/Temporarily">Non-academic - Adhoc/Temporarily</option>
+                <option value="Student President">Student President</option>
+            </select>
+
+            <!-- Welcome Address (if leadership position is selected) -->
+            <div id="welcomeAddressSection" style="display:none;">
+                <label for="welcomeAddress">Welcome Address</label>
+                <textarea id="welcomeAddress" name="welcomeAddress"></textarea>
+            </div>
+
+            <!-- 2) Department (your department/required) -->
+            <label for="department">Department<span>*</span></label>
+            <input type="text" id="department" name="department" required>
+
+            <!-- 3) Staff Code/ID (optional) -->
+            <label for="staffCode">Staff Code/ID</label>
+            <input type="text" id="staffCode" name="staffCode">
+
+            <!-- 4) Pro Skills (selected from an auto picker) -->
+            <label for="proSkills">Pro Skills (Select up to 5)</label>
+            <select id="proSkills" name="proSkills[]" multiple>
+                <option value="Problem Solving">Problem Solving</option>
+                <option value="Collaboration">Collaboration</option>
+                <option value="Work Ethics">Work Ethics</option>
+                <option value="Critical and Design Thinking">Critical and Design Thinking</option>
+                <option value="Adaptability">Adaptability</option>
+                <option value="Management">Management</option>
+                <!-- Add more skills as needed -->
+            </select>
+
+            <!-- Percentage level -->
+            <label for="skillsPercentage">Skills Percentage Level</label>
+            <select id="skillsPercentage" name="skillsPercentage">
+                <option value="">--Select Level--</option>
+                <option value="0-20">0-20%</option>
+                <option value="21-40">21-40%</option>
+                <option value="41-60">41-60%</option>
+                <option value="61-80">61-80%</option>
+                <option value="81-100">81-100%</option>
+            </select>
+
+            <!-- 10) Qualification (in a text area) -->
+            <label for="qualification">Qualification<span>*</span></label>
+            <textarea id="qualification" name="qualification" required></textarea>
+
+            <!-- Degree (your last degree here/required) -->
+            <label for="degree">Degree<span>*</span></label>
+            <input type="text" id="degree" name="degree" required>
+
+            <!-- University (your last university here/required) -->
+            <label for="university">University<span>*</span></label>
+            <input type="text" id="university" name="university" required>
+
+            <!-- Hobbies (selected from an auto picker) -->
+            <label for="hobbies">Hobbies</label>
+            <select id="hobbies" name="hobbies[]" multiple>
+                <option value="Gaming">Gaming</option>
+                <option value="Writing">Writing</option>
+                <option value="Traveling">Traveling</option>
+                <option value="Sketching">Sketching</option>
+                <!-- Add more hobbies as needed -->
+            </select>
+
+            <!-- Motivation (in a text area) -->
+            <label for="motivation">Motivation</label>
+            <textarea id="motivation" name="motivation"></textarea>
+
+            <!-- Favorite Working Group -->
+            <label for="favoriteGroup">What is your favorite working/association group and why?</label>
+            <textarea id="favoriteGroup" name="favoriteGroup"></textarea>
+
+            <!-- Favorite Discussion Group -->
+            <label for="favoriteDiscussion">What is your favorite institutional/research discussion group and why?</label>
+            <textarea id="favoriteDiscussion" name="favoriteDiscussion"></textarea>
+
+            <!-- Best Life Experience -->
+            <label for="bestExperience">What is your best life experience you have come across and why?</label>
+            <textarea id="bestExperience" name="bestExperience"></textarea>
+
+            <!-- Official/Smiling Picture (attach your photo/image here/required) -->
+            <label for="photo">Official/Smiling Picture<span>*</span></label>
+            <input type="file" id="photo" name="photo" accept="image/*" required>
+
+            <!-- Contact Details -->
+            <h3>Contact Details</h3>
+
+            <!-- Phone Number (your phone number here/required/validated) -->
+            <label for="phone">Phone Number<span>*</span></label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <!-- Email (your email here/required/validated) -->
+            <label for="email">Email<span>*</span></label>
+            <input type="email" id="email" name="email" required>
+
+            <!-- Social Media Handles (optional) -->
+            <h3>Social Media Handles (Optional)</h3>
+
+            <!-- Facebook ID (Supplied/embedded with logo) -->
+            <label for="facebook">Facebook ID</label>
+            <input type="text" id="facebook" name="facebook">
+
+            <!-- Twitter ID (Supplied/embedded with logo) -->
+            <label for="twitter">Twitter ID</label>
+            <input type="text" id="twitter" name="twitter">
+
+            <!-- Instagram ID (Supplied/embedded with logo) -->
+            <label for="instagram">Instagram ID</label>
+            <input type="text" id="instagram" name="instagram">
+
+            <!-- YouTube ID (Supplied/embedded with logo) -->
+            <label for="youtube">YouTube ID</label>
+            <input type="text" id="youtube" name="youtube">
+
+            <!-- Submit Button -->
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
